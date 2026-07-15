@@ -17,7 +17,7 @@ const DashboardPage: FC = async () => {
 			<main className="p-4">
 				<div className="mt-4">
 					<p>
-						Welcome, <strong>{user?.username ?? "User"}</strong>!
+						Welcome, <strong>{user?.username}</strong>!
 					</p>
 				</div>
 			</main>

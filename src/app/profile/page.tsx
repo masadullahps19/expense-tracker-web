@@ -25,11 +25,20 @@ const ProfilePage: FC = async () => {
 					<div className="divide-y">
 						<div className="flex items-center justify-between p-4">
 							<span className="font-medium text-gray-600">
-								Name
+								Full Name
 							</span>
 							<span>
-								{`${user?.firstName ?? ""} ${user?.lastName ?? ""}`.trim() ||
+								{`${user?.firstName} ${user?.lastName}`.trim() ||
 									"Not set"}
+							</span>
+						</div>
+
+						<div className="flex items-center justify-between p-4">
+							<span className="font-medium text-gray-600">
+								Display Name
+							</span>
+							<span>
+								{`${user?.fullName}`.trim() || "Not set"}
 							</span>
 						</div>
 
@@ -37,7 +46,7 @@ const ProfilePage: FC = async () => {
 							<span className="font-medium text-gray-600">
 								Username
 							</span>
-							<span>{user?.username ?? "Not set"}</span>
+							<span>{user?.username}</span>
 						</div>
 
 						<div className="flex items-center justify-between p-4">
@@ -45,8 +54,7 @@ const ProfilePage: FC = async () => {
 								Email
 							</span>
 							<span>
-								{user?.primaryEmailAddress?.emailAddress ??
-									"Not set"}
+								{user?.primaryEmailAddress?.emailAddress}
 							</span>
 						</div>
 
@@ -55,8 +63,7 @@ const ProfilePage: FC = async () => {
 								Phone
 							</span>
 							<span>
-								{user?.primaryPhoneNumber?.phoneNumber ??
-									"Not set"}
+								{user?.primaryPhoneNumber?.phoneNumber}
 							</span>
 						</div>
 					</div>
@@ -64,37 +71,37 @@ const ProfilePage: FC = async () => {
 
 				<div className="mt-8 flex flex-col gap-4">
 					<Link
-						href="/tags/add"
-						className="rounded-full bg-fuchsia-600 px-6 py-3 text-center font-medium text-white transition hover:bg-fuchsia-700"
+						href="/tags"
+						className="rounded-full bg-white px-6 py-3 text-center font-medium text-neutral-900 transition hover:bg-fuchsia-700"
 					>
-						Add Tag
+						All Tags
 					</Link>
 
 					<Link
-						href="/categories/add"
-						className="rounded-full bg-fuchsia-600 px-6 py-3 text-center font-medium text-white transition hover:bg-fuchsia-700"
+						href="/categories"
+						className="rounded-full bg-white px-6 py-3 text-center font-medium text-neutral-900 transition hover:bg-fuchsia-700"
 					>
-						Add Category
+						All Categories
 					</Link>
 
 					<Link
-						href="/incomes/add"
-						className="rounded-full bg-fuchsia-600 px-6 py-3 text-center font-medium text-white transition hover:bg-fuchsia-700"
+						href="/incomes"
+						className="rounded-full bg-white px-6 py-3 text-center font-medium text-neutral-900 transition hover:bg-fuchsia-700"
 					>
-						Add Income
+						All Incomes
 					</Link>
 
 					<Link
-						href="/expenses/add"
-						className="rounded-full bg-fuchsia-600 px-6 py-3 text-center font-medium text-white transition hover:bg-fuchsia-700"
+						href="/expenses"
+						className="rounded-full bg-white px-6 py-3 text-center font-medium text-neutral-900 transition hover:bg-fuchsia-600"
 					>
-						Add Expense
+						All Expenses
 					</Link>
 
 					<SignOutButton redirectUrl="/auth/sign-in">
 						<button
 							type="button"
-							className="w-full rounded-full bg-red-600 px-6 py-3 font-medium text-white transition hover:bg-red-700"
+							className="w-full rounded-full bg-white px-6 py-3 font-medium text-neutral-900 transition hover:bg-red-700"
 						>
 							Sign Out
 						</button>
